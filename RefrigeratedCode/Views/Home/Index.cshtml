@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div ng-app="MainApp">
+
+    <div ng-controller="MainController">
+        <div ng-repeat="post in posts">
+            <a href="/Home/Posts/{{post.postId}}" style="text-decoration: none"><span style="font-family: 'Roboto'; font-size: 35px; color: #495057 ">{{post.title}}</span>  </a>
+            <br/>
+            <span>{{formatDate(post.postedOn)}}</span>
+            <br/>
+            <p ng-bind-html="post.content"></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/angular/angular.min.js"></script>
+<script src="~/lib/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="js/Common.js"></script>
+<script src="js/site.js"></script>

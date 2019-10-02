@@ -1,0 +1,14 @@
+﻿@model RefrigeratedCode.Models.BlogPost
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+
+<span style="font-family: Roboto; font-size: 35px" > @Model.Title </span><br />
+<span>@Model.PostedOn</span><br/> <br/>
+<span > @Html.Raw(Model.Content) </span>
+
+<script src="~/lib/angular/angular.min.js"></script>
+<script src="~/lib/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="js/Common.js"></script>
+<script src="js/site.js"></script>

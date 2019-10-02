@@ -1,0 +1,30 @@
+﻿@model object
+
+@{
+    ViewBag.Title = "Submission";
+    Layout = "_Layout";
+}
+
+<div ng-app="SubmissionApp">
+    <h2>Submit a new post</h2>
+    
+    <div ng-controller="SubmissionController as submission">
+        Your post is previewed below.
+
+        <form>
+            <label>Title: <input type="text" ng-model="title"/></label> <br/>
+            <textarea ui-tinymce="tinymceOptions" ng-model="content"></textarea>
+            <input type="button" class="btn btn-success" ng-click="submitPost()" value="Submit"></input>
+        </form>
+        <span style="font-family: Roboto; font-size: 35px" ng-bind-html="title"></span><br />
+        <span ng-bind-html="content"></span>
+        <br /><br /><br />
+    </div>
+</div>
+
+
+<script src="~/lib/tinymce/tinymce.min.js"></script>
+<script src="~/lib/angular/angular.min.js"></script>
+<script src="~/lib/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="~/lib/angular-ui-tinymce/dist/tinymce.min.js"></script>
+<script src="~/js/submission.js"></script>
